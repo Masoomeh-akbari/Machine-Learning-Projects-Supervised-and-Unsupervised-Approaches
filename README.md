@@ -1,67 +1,70 @@
-# Predicting Concrete Compressive Strength Using Machine Learning
+# **Machine Learning Projects: Supervised and Unsupervised Approaches**
 
-This project focuses on leveraging supervised machine learning techniques to predict the **28-day compressive strength** of concrete, a critical metric in civil engineering. The compressive strength of concrete reflects its ability to resist failure under pressure and is fundamental to the design and safety of civil infrastructure.
+This repository showcases two distinct projects, each applying machine learning techniques to solve real-world problems in different domains. The repository is organized into two sections:
 
-Accurate prediction of concrete strength is vital to balancing cost-efficiency, environmental sustainability, and structural integrity. This project addresses this challenge by analyzing and modeling the relationship between concrete mixture proportions and strength using a dataset (`concrete.csv`) representative of real-world scenarios.
-
----
-
-## Problem Statement
-
-Concrete strength prediction is essential to prevent under-designed structures that risk failure and over-designed structures that result in increased costs and environmental impact. The dataset used for this analysis presents the **small dataset problem**, a common challenge in machine learning, where limited data availability demands careful preprocessing and feature engineering to achieve reliable predictions.
-
----
-
-## Dataset Description
-
-The dataset contains the following attributes:
-
-- **Cement, Blast Furnace Slag, Fly Ash, Water, Superplasticizer, Coarse Aggregate, Fine Aggregate**: Quantities of respective components in kg/m³ of the concrete mixture.
-- **Age**: Age of the concrete (in days) ranging from 1 to 365.
-- **Compressive Strength (Target)**: Measured in MPa, representing the 28-day compressive strength of the concrete.
+1. **Supervised Learning**: **Predicting Concrete Compressive Strength**
+   - Focused on regression modeling to predict the compressive strength of concrete mixtures.
+   - Code: `Predicting_Concrete_Strength.ipynb`
+2. **Unsupervised Learning**: **Clustering Housing Data**
+   - Employed clustering techniques to segment housing data based on economic and geographical attributes.
+   - Code: `Clustering_Housing_data.ipynb`
 
 ---
 
-## Project Workflow
+## **1. Predicting Concrete Compressive Strength**
 
-### 1. Exploratory Data Analysis (EDA)
+### **Objective**
+Predicting the 28-day compressive strength of concrete, a critical metric for the design and safety of civil engineering projects. This project applies supervised machine learning techniques to model the relationship between concrete composition and its compressive strength.
 
-Performed univariate and multivariate analyses to understand data distributions and relationships:
-- **Histograms**: Revealed distributions and central tendencies.
-- **Boxplots**: Identified potential outliers in key variables.
-- **Pair plots**: Examined relationships between features.
-- **Heatmaps**: Analyzed correlations, highlighting significant predictors like **Cement**, **Superplasticizer**, and **Age**.
+### **Dataset**
+- **Source**: `concrete.csv`
+- **Attributes**:
+  - **Inputs**: Cement, Blast Furnace Slag, Fly Ash, Water, Superplasticizer, Coarse Aggregate, Fine Aggregate, and Age (1–365 days).
+  - **Target**: Compressive Strength (in MPa).
 
-### 2. Data Preparation & Feature Engineering
-- **Data Cleaning**: Removed duplicates and handled missing values.
-- **Zero Value Handling**: Replaced zeros in skewed variables with median values or mean where appropriate.
-- **Outlier Mitigation**: Used **Quantile Transformer** for robust scaling and reducing outlier impact.
-- **Feature Scaling**: Standardized the dataset for consistent model performance.
+### **Methodology**
+1. **Exploratory Data Analysis (EDA)**:
+   - Uncovered patterns through histograms, boxplots, pair plots, and heatmaps.
+   - Identified significant predictors: Cement, Superplasticizer, and Age.
 
-### 3. Modeling & Evaluation
+2. **Data Preparation**:
+   - Cleaned data and handled missing values.
+   - Replaced zeros in skewed variables with median/mean values.
+   - Scaled features using Quantile Transformer for robust model performance.
 
-Trained the dataset on three regression models:
-- **K-Nearest Neighbors (KNN)**
-- **Random Forest**
-- **XGBoost**
+3. **Modeling and Evaluation**:
+   - Models Used: KNN, Random Forest, XGBoost.
+   - Ensemble Learning: Combined models using a Voting Regressor.
+   - Metrics: RMSE, MAE, MSE, R².
 
-Combined individual models using a **Voting Regressor** for ensemble learning.
-
-**Evaluation Metrics**:
-- **RMSE (Root Mean Squared Error)**
-- **MAE (Mean Absolute Error)**
-- **MSE (Mean Squared Error)**
-- **R² Accuracy**
-
-### Results
-- **XGBoost** and the **Voting Regressor** outperformed other models across all metrics, showcasing their robustness in predicting compressive strength.
-- **KNN Regressor** demonstrated the weakest performance, likely due to its sensitivity to feature scaling and data sparsity.
+### **Results**
+- **XGBoost** and **Voting Regressor** outperformed other models, delivering the most accurate predictions.
+- Highlighted the importance of preprocessing in small datasets and demonstrated the value of ensemble learning.
 
 ---
 
-## Key Learnings and Contributions
-- Highlighted the importance of preprocessing in dealing with small datasets.
-- Demonstrated the value of ensemble learning in improving predictive accuracy.
-- Provided a reproducible workflow for similar regression tasks in the engineering domain.
+## **2. Clustering Housing Data**
 
----
+### **Objective**
+Identify distinct economic segments across a state using clustering techniques on housing data. This unsupervised learning project focuses on grouping regions with similar economic and geographical attributes.
+
+### **Dataset**
+- **Source**: `housing.csv`
+- **Attributes Used**: Median Income, Longitude, Latitude.
+
+### **Methodology**
+1. **K-Means Clustering**:
+   - Performed clustering with `k=6` and visualized results in 3D space.
+2. **Elbow Method**:
+   - Plotted WCSS to identify the optimal number of clusters.
+   - Observed that the optimal `k` is 2.
+3. **Silhouette Analysis**:
+   - Evaluated clustering quality using the Silhouette Coefficient.
+   - Found that `k=2` produces well-defined and meaningful clusters.
+
+### **Results**
+- Clustering revealed distinct regional economic segments.
+- Optimal clusters (`k=2`) provided high-quality, interpretable groupings, supported by Silhouette Coefficient analysis.
+
+
+
