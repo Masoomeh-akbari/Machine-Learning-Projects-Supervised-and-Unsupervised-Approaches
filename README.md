@@ -4,10 +4,10 @@ This repository showcases two distinct projects, each applying machine learning 
 
 1. **Supervised Learning**: **Predicting Concrete Compressive Strength**
    - Focused on regression modeling to predict the compressive strength of concrete mixtures.
-   - Code: `Predicting_Concrete_Strength.ipynb`
+   - Code: [`Predicting_Concrete_Strength.ipynb`](./Predicting_Concrete_Strength.ipynb)
 2. **Unsupervised Learning**: **Clustering Housing Data**
    - Employed clustering techniques to segment housing data based on economic and geographical attributes.
-   - Code: `Clustering_Housing_data.ipynb`
+   - Code: [`Clustering_Housing_data.ipynb`](./Clustering_Housing_data.ipynb)
 
 ---
 
@@ -17,7 +17,7 @@ This repository showcases two distinct projects, each applying machine learning 
 Predicting the 28-day compressive strength of concrete, a critical metric for the design and safety of civil engineering projects. This project applies supervised machine learning techniques to model the relationship between concrete composition and its compressive strength.
 
 ### **Dataset**
-- **Source**: `concrete.csv`
+- **Source**: [`concrete.csv`](./concrete.csv)
 - **Attributes**:
   - **Inputs**: Cement, Blast Furnace Slag, Fly Ash, Water, Superplasticizer, Coarse Aggregate, Fine Aggregate, and Age (1–365 days).
   - **Target**: Compressive Strength (in MPa).
@@ -49,7 +49,7 @@ Predicting the 28-day compressive strength of concrete, a critical metric for th
 Identify distinct economic segments across a state using clustering techniques on housing data. This unsupervised learning project focuses on grouping regions with similar economic and geographical attributes.
 
 ### **Dataset**
-- **Source**: `housing.csv`
+- **Source**: [`housing.csv`](./housing.csv)
 - **Attributes Used**: Median Income, Longitude, Latitude.
 
 ### **Methodology**
